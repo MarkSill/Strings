@@ -21,8 +21,6 @@ int str::cstr::len() const {
 }
 
 const char* str::cstr::c_str() const {
-	//char *s = new char[length];
-	//strcpy(s, cs);
 	return cs;
 }
 
@@ -35,7 +33,7 @@ const char str::cstr::at(int index) const {
 }
 
 ostream& str::operator<<(ostream &out, const cstr &str) {
-	out << str.cs;
+	out.write(str.c_str(), str.len());
 	return out;
 }
 
@@ -47,8 +45,14 @@ const char str::cstr::operator[](int index) const {
 	return at(index);
 }
 
+void str::cstr::clear() {
+	set("");
+}
+
 void str::cstr::clean() {
-	delete[] cs;
+	//Following line causes SEGFAULT (supposedly in lllstr?):
+	//delete[] cs;
+	cs = nullptr;
 }
 
 str::cstr::~cstr() {
