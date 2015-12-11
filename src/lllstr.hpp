@@ -25,6 +25,7 @@ namespace str {
 		const char at(int index) const;
 		char operator[](int index);
 		const char operator[](int index) const;
+		void clear();
 		void clean(node *n);
 
 		friend std::istream& operator>>(std::istream &in, lllstr &str);
