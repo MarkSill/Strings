@@ -18,6 +18,7 @@ namespace str {
 		std::ostream& operator<<(std::ostream &out);
 		char operator[](int index);
 		const char operator[](int index) const;
+		void clear();
 		void clean();
 
 		friend std::ostream& operator<<(std::ostream &out, const cstr &str);
