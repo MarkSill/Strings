@@ -69,6 +69,30 @@ void str::lllstr::clean(node *n) {
 	}
 }
 
+char str::lllstr::at(int index) {
+	return at(index);
+}
+
+const char str::lllstr::at(int index) const {
+	//TODO: Fix function from apparently looping forever...
+	node *current = head;
+	int i = 0;
+
+	while (i++ < index) {
+		current = current->next;
+	}
+
+	return current->data;
+}
+
+char str::lllstr::operator[](int index) {
+	return at(index);
+}
+
+const char str::lllstr::operator[](int index) const {
+	return at(index);
+}
+
 str::lllstr::~lllstr() {
 	clean(head);
 }

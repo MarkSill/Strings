@@ -21,6 +21,10 @@ namespace str {
 		lllstr& operator=(const char *str);
 		void set(const lllstr &str);
 		void set(const char *str);
+		char at(int index);
+		const char at(int index) const;
+		char operator[](int index);
+		const char operator[](int index) const;
 		void clean(node *n);
 
 		friend std::istream& operator>>(std::istream &in, lllstr &str);
